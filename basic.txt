@@ -1,0 +1,27 @@
+🌱 Programming Foundations (Completed ✅)
+├── 🔢 Problem Solving
+│   ├── Factorial
+│   ├── Fibonacci
+│   ├── Sum of Digits
+│   └── Recursion (Base Case, Flow)
+├── 🧱 Data Structures (Intro)
+│   ├── List
+│   ├── Array (1D & Multidimensional)
+│   ├── Tuple
+│   ├── Dictionary
+│   └── Set
+├── 🔡 String Manipulation
+│   ├── Slicing
+│   ├── Searching
+│   ├── Replacing
+│   └── Reversing
+├── 🧯 Error Handling
+│   ├── try-except blocks
+│   ├── Common Exception Types
+│   └── else/finally
+├── 📁 File Handling
+│   ├── Text Files (.txt)
+│   └── CSV Files (.csv with csv module)
+└── ⏱️ Time & Space Complexity
+├── O(1), O(n), O(n²), O(log n), O(2ⁿ)
+└── Visual Graph Comparison
