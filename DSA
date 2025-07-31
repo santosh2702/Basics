@@ -1,0 +1,205 @@
+
+
+str = 'Hello123'
+def Revstr():
+    Str= ''
+    for c in s():
+        if c.isalph():
+            str + = c.lower()
+    return 
+
+for i in c (len(num)):
+    for j in c(i+1, len(num)):
+        count = c.count(1 + get(num))
+        num 
+    
+    .reverse()
+    
+find the second biggest integer in an array
+
+array = [1,4,8,5,3]
+second biggest is 5 
+
+ for i in range():
+     
+
+def second_largets_with_hash(arr):
+    if len(arr) < 2
+        return None
+    unique_numbers = set(arr)
+    
+    if len(unique_number) < 2:
+        return None
+    
+    unique_numbers.remove(max(unique_numbers))
+    return max(unique_numbers)
+    
+    
+    
+def count_frequency(arr):
+    freq = {}
+    for num in arr:
+        freq[num] = freq.get(num, 0) + 1
+    return freq
+    
+def first_non_repeating(s):
+    count = {}      # a dictionary for count
+    for c in s:     # running through all the characters in string
+        count[c] = count.get(c, 0) + 1 #counting the character 
+    for c in s:  #here again a loop to check 
+        if count[c] == 1:  # if a character has single count
+            return c  # return that character and that's the end goal
+    return None #if not return none
+    
+    
+    def first_non_repeating(s):
+        count = {}
+        for c in s:
+            count[c] = count.get(c, 0) + 1
+        for c in s:
+            if count[c] == 1
+                return c
+        return None
+        
+        
+    def two_sum(nums, target):
+        seen = {}
+        for i, num in enumerate(nums):
+            rem = target - num
+            if rem in seen:
+                return [seen[rem], i]
+            seen[num] = i
+            
+            
+    def fib(n):
+        if n <=1:
+            return n
+        a, b = 0, 1
+        for _ in range(2, n+1):
+            a, b  = b, a + b
+        return b
+        
+        
+    def rotate(nums, k):
+        k %= len(nums)
+        nums[:] = nums[-k:] + nums[:-k]
+        
+def rotate(num, k):
+    k %= len(num)
+    
+    nums[:] = nums[-k:] + nums[:-k]
+
+
+for rotating a array we are taking modulo of the length of number and we get the 
+
+def reverse_list(head):
+    prev = None
+    current = head
+    
+    while current:
+        next = current.next
+        current.next = prev
+        prev = current
+        current = next
+    return prev
+    
+    
+    def reverse_list(head):
+        prev = None
+        current = head
+        
+        while current:
+            next = current.next
+            current.next = prev
+            prev = current
+            current = next
+        return prev
+        
+     while current:   
+        next = curent.next
+        current.next = prev
+        prev = current
+        current = next
+     return prev
+     
+     while current:
+         next = current.next
+         current.next
+         
+         method 1
+         
+    def ValidParentheses():
+        while '()' in s or '{}' in s or '[]' in s:
+            
+            s = s.replace('()', '')
+            s = s.replace('{}', '')
+            s = s.replace('[]', '')
+             
+        return s == ''
+        
+        method 2
+        
+        def is_valid(s):
+            stack = []
+            mapping = {')':'(' , '}':'{', ']':'['}
+            
+            for ch in s:
+                if ch in mapping.values():
+                    stack.append(ch)
+                elif ch in mapping:
+                    if not stack or stack.pop() != mapping[ch]:
+                        return False
+            return not stack
+            
+            
+            
+        def is_valid(s):
+            stack = []
+            mapping = {')':'(', ']':'[' , '{':'}'}
+            
+            for c in s:
+                if c in mapping.values():
+                    stack.append(c)
+                elif c in mapping:
+                    if not stack and stack.pop() != mapping[c]:
+                        return False
+            return not stack
+            
+            
+            
+    from collections import Counter
+    def first_non_repeating(s):
+        count = Counter(s)
+        for c in s:
+            if count[c] == 1:
+                return c
+        return None
+            
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+    
+    
