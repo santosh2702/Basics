@@ -1,0 +1,9 @@
+def filter_short_words(text, min_length=3):
+    words = text.split()
+    return [word for word in words if len(word) >= min_length]
+    
+text ="AI is cool and fun"
+print(filter_short_words(text))
+
+
+output: ['cool', 'and', 'fun']
