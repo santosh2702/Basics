@@ -1,0 +1,33 @@
+Main Uses of NLTK
+
+Text Preprocessing
+
+Tokenization (splitting text into words/sentences)
+
+Removing stopwords ("is", "the", etc.)
+
+Stemming and lemmatization (reducing words to root form)
+
+Part-of-speech tagging (noun, verb, etc.)
+
+Text Analysis
+
+Named entity recognition (finding names, places, dates)
+
+Frequency distribution (finding most common words)
+
+Concordance (finding words in context)
+
+Linguistic Data Access
+
+Comes with many corpora (collections of text) for training & testing
+
+Example: WordNet (word meanings, synonyms, antonyms)
+
+Building NLP Applications
+
+Chatbots
+
+Sentiment analysis
+
+Text classification (spam detection, topic classification)
