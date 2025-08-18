@@ -1,0 +1,47 @@
+🔹 For Data Structures & Algorithms / Coding Interviews
+
+r/algorithms → Discussions, explanations, and theory of algorithms.
+
+r/datastructures → Focused purely on data structures, implementation details, and use cases.
+
+r/leetcode → Problem discussions, solutions, and interview prep around LeetCode.
+
+r/cscareerquestions → Career + interview prep (lots of FAANG/Big Tech DSA prep discussions).
+
+r/cscareerquestionsEU / r/cscareerquestionsIN → Region-specific versions with interview prep.
+
+r/coding → General programming, includes problem-solving threads.
+
+r/learnprogramming → Beginner-friendly, good for clarifying concepts.
+
+r/competitiveprogramming → For advanced DSA + CP problems (Codeforces, AtCoder, etc.).
+
+r/programmingchallenges → Practice challenges with discussions.
+
+🔹 For AI, ML, and Deep Learning
+
+r/MachineLearning → One of the largest ML/AI subs, research + applied.
+
+r/learnmachinelearning → Beginner-friendly ML learning and resources.
+
+r/artificial → General AI discussions, from news to projects.
+
+r/deeplearning → Focused on neural nets, CNNs, RNNs, transformers, etc.
+
+r/datascience → Practical ML + data pipelines + industry use cases.
+
+r/MLQuestions → Q&A format for specific ML doubts.
+
+r/LanguageTechnology → NLP, LLMs, transformers, etc.
+
+r/LocalLLaMA → Open-source LLM enthusiasts (running AI models locally).
+
+🔹 For Both (Bridging DSA + AI)
+
+r/csbooks → Books for algorithms, AI, ML.
+
+r/ComputerScience → Core CS concepts including algorithms & AI theory.
+
+r/learnpython → If you want to implement both DSA and ML in Python.
+
+r/mlops → Deploying AI models (after solving algorithms & theory).
