@@ -23,6 +23,8 @@
 ## String Manipulation (Mixed)
 
 * Reverse a string that contains **numbers and letters**; **reverse only the letter part** and **keep numbers in place**
+* How to merge 2 dataframes in python
+* L1= [1,2,3] l2=[4,5,6] so l1.appendl2 and l1.extendl2 ?
 
 ANSWER
 
