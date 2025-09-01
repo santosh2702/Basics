@@ -1,0 +1,14 @@
+Accuracy = (TP + TN) / (TP + TN + FP + FN)
+→ Overall correctness.
+
+Precision = TP / (TP + FP)
+→ Out of predicted positives, how many were actually positive?
+
+Recall (Sensitivity, TPR) = TP / (TP + FN)
+→ Out of actual positives, how many were correctly identified?
+
+F1 Score = 2 × (Precision × Recall) / (Precision + Recall)
+→ Balance between Precision & Recall.
+
+Specificity (TNR) = TN / (TN + FP)
+→ Out of actual negatives, how many were correctly identified?
