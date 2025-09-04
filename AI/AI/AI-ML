@@ -1,0 +1,16 @@
+You (the kid) ask a question:
+“Tell me about the biggest dinosaurs in India.”
+
+🖥️ MCP server (control room) says:
+“Okay, I need to do RAG → ask Vector DB → then use AI.”
+
+📚 RAG asks Vector DB:
+“Find me the most relevant info.”
+
+🗂️ Vector DB (magic shelf) gives back:
+“Here are the closest texts about ‘Rajasaurus from India.’”
+
+🧠 AI (trained with supervised learning) reads those chunks and writes a neat answer:
+“The largest known dinosaur in India was Rajasaurus…”
+
+You get the final response with truth + creativity.
