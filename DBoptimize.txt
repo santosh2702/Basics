@@ -1,0 +1,6 @@
+1. Identify slow query -> EXPLAIN ANALYZE
+2. Find WHERE columns used heavily -> choose them for index
+3. If filter is selective -> consider partial index (WHERE ...)
+4. If query reads additional columns -> INCLUDE them to make covering index
+5. Create index CONCURRENTLY -> ANALYZE
+6. Re-run EXPLAIN ANALYZE and compare
