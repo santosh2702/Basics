@@ -9,7 +9,6 @@ public class HomeController : ControllerBase
     }
 }
 
-
 var result = List.FirstOrDefault(x => x.Id == 10);
 var names = users.Select( u => u.Name).ToList();
 
