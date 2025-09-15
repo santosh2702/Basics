@@ -1,0 +1,19 @@
+Cheat Sheet (1-liners)
+
+Kestrel = server engine (fast, async).
+
+Middleware = pipeline steps, order matters.
+
+Controllers/Minimal APIs = endpoints.
+
+Model Binding = auto map JSON/form to C# objects.
+
+DI = built-in, no external library.
+
+EF Core = ORM for DB, with migrations.
+
+Identity = built-in auth system.
+
+Logging = ILogger abstraction, plug Serilog/NLog.
+
+Scaling = containers + reverse proxy.
