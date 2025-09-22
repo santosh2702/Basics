@@ -1,0 +1,137 @@
+{
+  "1": {
+    "section_id": "home-hero",
+    "section_title": "Home - Hero",
+    "url": "https://example.com/",
+    "elements": [
+      {
+        "element_id": "email",
+        "tag": "input",
+        "type": "email",
+        "label": "Email address",
+        "placeholder": "you@company.com",
+        "validations": {
+          "required": true,
+          "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$",
+          "minlength": null,
+          "maxlength": null
+        },
+        "events": ["oninput", "onblur"]
+      },
+      {
+        "element_id": "subscribeBtn",
+        "tag": "button",
+        "type": "submit",
+        "label": "Subscribe",
+        "validations": {},
+        "events": ["onclick"]
+      }
+    ],
+    "user_stories": [
+      {
+        "id": "US-1",
+        "title": "Subscribe to newsletter",
+        "as_a": "visitor",
+        "i_want": "to enter my email and click Subscribe",
+        "so_that": "I receive the newsletter",
+        "acceptance_criteria": [
+          "Email field is required",
+          "Email must match basic email regex",
+          "Clicking Subscribe with invalid email shows inline error"
+        ]
+      }
+    ],
+    "validation_screens": [
+      {
+        "vs_id": "VS-1",
+        "name": "Subscribe - Validation",
+        "trigger": "click subscribe",
+        "inputs_checked": ["email"],
+        "rules": {
+          "email": {
+            "required": true,
+            "pattern": "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$"
+          }
+        },
+        "expected_messages": {
+          "email_required": "Please enter your email",
+          "email_invalid": "Please enter a valid email address"
+        }
+      }
+    ],
+    "notes": "extracted from form#newsletter"
+  },
+
+  "2": {
+    "section_id": "contact",
+    "section_title": "Contact Us",
+    "url": "https://example.com/contact",
+    "elements": [
+      {
+        "element_id": "name",
+        "tag": "input",
+        "type": "text",
+        "label": "Full name",
+        "placeholder": "Your full name",
+        "validations": {
+          "required": true,
+          "minlength": 3,
+          "maxlength": 100
+        },
+        "events": ["oninput"]
+      },
+      {
+        "element_id": "message",
+        "tag": "textarea",
+        "type": null,
+        "label": "Message",
+        "placeholder": "How can we help?",
+        "validations": {
+          "required": true,
+          "minlength": 10,
+          "maxlength": 2000
+        },
+        "events": []
+      },
+      {
+        "element_id": "contactSubmit",
+        "tag": "button",
+        "type": "submit",
+        "label": "Send",
+        "validations": {},
+        "events": ["onclick"]
+      }
+    ],
+    "user_stories": [
+      {
+        "id": "US-2",
+        "title": "Contact support",
+        "as_a": "visitor",
+        "i_want": "to submit my name and a message",
+        "so_that": "support can respond to my query",
+        "acceptance_criteria": [
+          "Name required, min 3 chars",
+          "Message required, min 10 chars",
+          "Submit disabled until required fields are valid"
+        ]
+      }
+    ],
+    "validation_screens": [
+      {
+        "vs_id": "VS-2",
+        "name": "Contact Form - Empty Submit",
+        "trigger": "click send with empty fields",
+        "inputs_checked": ["name", "message"],
+        "rules": {
+          "name": {"required": true, "minlength": 3},
+          "message": {"required": true, "minlength": 10}
+        },
+        "expected_messages": {
+          "name_required": "Please enter your name",
+          "message_required": "Please enter your message"
+        }
+      }
+    ],
+    "notes": "form#contactForm - detected server-side error-container .error"
+  }
+}
