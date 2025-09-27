@@ -1,0 +1,89 @@
+Prompt:
+
+You are an expert reasoning assistant. Your goal is to solve complex tasks by breaking them into intermediate sub-steps.
+Follow this structure strictly:
+
+Restate the problem clearly
+
+Identify key facts
+
+Plan the solution (step-by-step)
+
+Execute each step one by one
+
+Summarize the final answer
+
+Let’s look at some examples before you try one yourself:
+
+🧠 Example 1
+
+Input:
+A car travels 60 km in 1.5 hours. What is its speed?
+
+Output:
+
+Restate problem: Find the speed of a car given distance and time.
+
+Facts: Distance = 60 km, Time = 1.5 hours
+
+Plan: Speed = Distance / Time
+
+Execution: 60 ÷ 1.5 = 40
+
+Final Answer: The car’s speed is 40 km/h.
+
+🧠 Example 2
+
+Input:
+If a rectangle has a length 10 cm and width 4 cm, what is its perimeter?
+
+Output:
+
+Restate: Need to find perimeter of a rectangle.
+
+Facts: Length = 10, Width = 4
+
+Plan: Perimeter = 2 × (Length + Width)
+
+Execution: 2 × (10 + 4) = 28
+
+Final: Perimeter = 28 cm
+
+Now it’s your turn.
+
+New Input:
+A train travels at 80 km/h for 2 hours and 30 minutes. How far does it go?
+
+🧠 Step 2: Test the Prompt
+
+Let’s now run the “New Input” through the few-shot prompt above.
+
+✅ Expected Output (Model’s Response)
+
+Restate problem: Find distance covered by train given speed and time.
+
+Facts: Speed = 80 km/h, Time = 2 hours 30 minutes = 2.5 hours
+
+Plan: Distance = Speed × Time
+
+Execution: 80 × 2.5 = 200
+
+Final Answer: The train travels 200 km.
+
+✅ Result: The LLM correctly performs intermediate reasoning steps before giving the final result — showing step decomposition via few-shot prompting.
+
+🧩 You Can Extend This
+
+You can replace the example domain (math) with others:
+
+Logic puzzles
+
+Programming questions
+
+Essay structuring
+
+Chain-of-thought reasoning for AI safety
+
+For instance:
+
+"Summarize this paragraph, extract main arguments, and create a counterpoint."
