@@ -1,0 +1,9 @@
+1. Store documents in GCS
+2. Create embeddings via Vertex AI Embedding API
+3. Store vectors in Vertex Matching Engine
+4. Build retriever function on Cloud Run
+5. Generate response with Vertex AI LLM endpoint
+6. Return API response to frontend
+
+
+Store doc in GCS => Create embeddings via vertex AI embedding API => Store vectors => Build retriever func => Generate response => Return API response to frontend
