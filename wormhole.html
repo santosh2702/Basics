@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Three.js Wormhole - Labeled Universes</title>
+    <style> body { margin: 0; } canvas { display: block; } </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/loaders/FontLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/geometries/TextGeometry.js"></script>
+    <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+        // Starry background
+        const starsGeometry = new THREE.BufferGeometry();
+        const starsMaterial = new THREE.PointsMaterial({ color: 0xFFFFFF, size: 0.1 });
+        const starsVertices = [];
+        for (let i = 0; i < 10000; i++) {
+            const x = THREE.MathUtils.randFloatSpread(2000);
+            const y = THREE.MathUtils.randFloatSpread(2000);
+            const z = THREE.MathUtils.randFloatSpread(2000);
+            starsVertices.push(x, y, z);
+        }
+        starsGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starsVertices, 3));
+        scene.add(new THREE.Points(starsGeometry, starsMaterial));
+
+        // Wormhole parametric (same as before)
+        function wormholeSurface(u, v, target) {
+            u = u * Math.PI * 2;
+            v = (v - 0.5) * 20;  // z from -10 to 10
+            const throatRadius = 2;
+            const flare = Math.cosh(v / 2);
+            const radius = throatRadius * flare;
+            const x = radius * Math.cos(u);
+            const y = radius * Math.sin(u);
+            const z = v;
+            target.set(x, y, z);
+        }
+
+        const geometry = new THREE.ParametricGeometry(wormholeSurface, 128, 64);
+
+        // Color based on z (side)
+        const positions = geometry.attributes.position;
+        const colors = [];
+        for (let i = 0; i < positions.count; i++) {
+            const z = positions.getZ(i);
+            const color = z > 0 ? new THREE.Color(0xFF00FF) : new THREE.Color(0x00FFFF); // Magenta vs Cyan
+            colors.push(color.r, color.g, color.b);
+        }
+        geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+        const material = new THREE.MeshBasicMaterial({ vertexColors: true, wireframe: true, side: THREE.DoubleSide });
+        const wormhole = new THREE.Mesh(geometry, material);
+        scene.add(wormhole);
+
+        // Glowing entrance rings
+        const ringGeo = new THREE.RingGeometry(4, 6, 64);
+        const ringMatA = new THREE.MeshBasicMaterial({ color: 0x00FFFF, side: THREE.DoubleSide, emissive: 0x00FFFF });
+        const ringMatB = new THREE.MeshBasicMaterial({ color: 0xFF00FF, side: THREE.DoubleSide, emissive: 0xFF00FF });
+        const ringA = new THREE.Mesh(ringGeo, ringMatA);
+        ringA.rotation.x = Math.PI / 2;
+        ringA.position.z = -8;
+        scene.add(ringA);
+        const ringB = new THREE.Mesh(ringGeo, ringMatB);
+        ringB.rotation.x = Math.PI / 2;
+        ringB.position.z = 8;
+        scene.add(ringB);
+
+        // Simple text labels (using Sprite for performance)
+        function makeLabel(message, color, position) {
+            const canvas = document.createElement('canvas');
+            canvas.width = 256; canvas.height = 128;
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'rgba(0,0,0,0.8)';
+            ctx.fillRect(0,0,256,128);
+            ctx.font = 'Bold 40px Arial';
+            ctx.fillStyle = color;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(message, 128, 64);
+            const texture = new THREE.CanvasTexture(canvas);
+            const spriteMat = new THREE.SpriteMaterial({ map: texture });
+            const sprite = new THREE.Sprite(spriteMat);
+            sprite.scale.set(10,5,1);
+            sprite.position.copy(position);
+            scene.add(sprite);
+        }
+        makeLabel('Universe A', '#00FFFF', new THREE.Vector3(0, 10, -12));
+        makeLabel('Universe B', '#FF00FF', new THREE.Vector3(0, 10, 12));
+
+        camera.position.set(0, 5, -20);
+
+        function animate() {
+            requestAnimationFrame(animate);
+            camera.position.z += 0.08;
+            if (camera.position.z > 20) camera.position.z = -20;
+
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
