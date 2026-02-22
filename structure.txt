@@ -1,0 +1,14 @@
+mern-tenant-app/
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── scripts/
+│   └── index.js
+├── frontend/
+│   ├── src/
+│   └── ...
+├── docker-compose.yml
+└── README.md
